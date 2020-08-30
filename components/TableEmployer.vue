@@ -1,7 +1,10 @@
 <template>
   <div class="table">
     <div class="tRow tHead">
-      <div class="item">Name</div>
+      <div class="item name" @click="sortAlphabet">
+        Name
+        <img src="~/assets/caret-down.svg" width="12" :class="{caretUp : sortOrder == 'desc'}">
+      </div>
       <div class="item">Age</div>
       <div class="item">Salary</div>
     </div>
@@ -18,7 +21,23 @@
 
 <script>
   export default {
-    props: ['dataEmployers']
+    data(){
+      return {
+        sortOrder: 'asc'
+      }
+    },
+    props: ['dataEmployers'],
+    methods: {
+      sortAlphabet() {
+        if(this.sortOrder == 'asc') {
+          this.sortOrder = 'desc'
+          this.$emit('sortAlphabet', 'desc')
+        } else {
+          this.sortOrder = 'asc'
+          this.$emit('sortAlphabet', 'asc')
+        }
+      }
+    }
   }
 
 </script>
@@ -36,8 +55,17 @@
       align-items: center;
 
       &.tHead {
+        height: 45px;
         background: #3E7DC0;
         color: #FFFFFF;
+
+        .name {
+          cursor: pointer;
+
+          .caretUp {
+            transform: rotate(180deg);
+          }
+        }
       }
 
       &.oddRow {
