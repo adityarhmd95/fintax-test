@@ -35,6 +35,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    { src: '~plugins/currency.js', ssr: true },
   ],
   /*
   ** Auto import components

@@ -11,7 +11,7 @@
       :class="{oddRow : index%2 != 0}">
       <div class="item">{{employer.employee_name}}</div>
       <div class="item">{{employer.employee_age}}</div>
-      <div class="item">{{employer.employee_salary}}</div>
+      <div class="item">{{employer.employee_salary | currency}}</div>
     </div>
   </div>
 </template>
