@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
   html {
     font-family:
       'Roboto',
@@ -31,6 +31,11 @@
     margin: 100px auto;
     display: flex;
     flex-flow: column;
+
+    @media screen and (max-width: 700px) {
+      padding: 0 15px;
+      margin: 30px auto;
+    }
   }
 
 </style>
