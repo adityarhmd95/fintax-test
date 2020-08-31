@@ -16,6 +16,7 @@
       <div class="item">{{employer.employee_age}}</div>
       <div class="item">{{employer.employee_salary | currency}}</div>
     </div>
+    <div class="totalRecord">Total records: {{dataEmployers.length}}</div>
   </div>
 </template>
 
@@ -46,16 +47,15 @@
   .table {
     display: flex;
     flex-flow: column;
-    max-width: 500px;
 
     .tRow {
       display: flex;
       flex-flow: row;
-      height: 30px;
+      height: 35px;
       align-items: center;
 
       &.tHead {
-        height: 45px;
+        height: 50px;
         background: #3E7DC0;
         color: #FFFFFF;
 
@@ -80,6 +80,11 @@
           width: 50%;
         }
       }
+    }
+
+    .totalRecord {
+      margin-top: 10px;
+      font-size: 15px;
     }
   }
 

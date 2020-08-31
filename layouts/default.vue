@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <Nuxt />
   </div>
 </template>
@@ -7,14 +7,9 @@
 <style>
   html {
     font-family:
+      'Roboto',
       'Source Sans Pro',
-      -apple-system,
-      BlinkMacSystemFont,
-      'Segoe UI',
-      Roboto,
-      'Helvetica Neue',
-      Arial,
-      sans-serif;
+      -apple-system;
     font-size: 16px;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
@@ -32,9 +27,8 @@
   }
 
   .container {
-    width: 100%;
-    padding: 0 50px;
-    margin: 100px 0;
+    width: 500px;
+    margin: 100px auto;
     display: flex;
     flex-flow: column;
   }
