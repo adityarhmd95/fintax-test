@@ -7,6 +7,7 @@
       v-if="dataEmployers"
       :dataEmployers="dataEmployers"
       @sortAlphabet="sortAlphabet" />
+    <Loader v-else />
   </div>
 </template>
 
@@ -14,11 +15,13 @@
   import axios from 'axios'
   import FilterEmployer from '~/components/FilterEmployer'
   import TableEmployer from '~/components/TableEmployer'
+  import Loader from '~/components/Loader'
 
   export default {
     components: {
       FilterEmployer,
-      TableEmployer
+      TableEmployer,
+      Loader
     },
     data(){
       return {

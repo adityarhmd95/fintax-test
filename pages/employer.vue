@@ -1,5 +1,6 @@
 <template>
   <div class="wrapEmployer">
+    <nuxt-link class="btnBack" to="/">Back</nuxt-link>
     <h1>Employer Detail</h1>
     <div class="detail" v-if="dataEmployer">
       <div class="items">
@@ -38,6 +39,19 @@
     max-width: 100%;
     display: flex;
     flex-flow: column;
+
+    .btnBack {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 3px;
+      text-decoration: none;
+      background: #3E7DC0;
+      color: #FFFFFF;
+      width: 80px;
+      height: 30px;
+      margin-bottom: 10px;
+    }
 
     .detail {
       display: flex;
