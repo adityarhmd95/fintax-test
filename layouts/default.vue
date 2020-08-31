@@ -38,4 +38,9 @@
     }
   }
 
+  .hint {
+    font-size: 11px;
+    font-style: italic;
+  }
+
 </style>

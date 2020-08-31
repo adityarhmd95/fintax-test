@@ -12,11 +12,12 @@
       v-for="(employer, index) in dataEmployers" 
       :key="index" 
       :class="{oddRow : index%2 != 0}">
-      <div class="item">{{employer.employee_name}}</div>
+      <div class="item" @click="storeData(employer)">{{employer.employee_name}}</div>
       <div class="item">{{employer.employee_age}}</div>
       <div class="item">{{employer.employee_salary | currency}}</div>
     </div>
     <div class="totalRecord">Total records: {{dataEmployers.length}}</div>
+    <span class="hint">(Click employer name to view detail)</span>
   </div>
 </template>
 
@@ -37,6 +38,10 @@
           this.sortOrder = 'asc'
           this.$emit('sortAlphabet', 'asc')
         }
+      },
+      storeData(data) {
+        localStorage.dataEmployer = JSON.stringify(data)
+        this.$router.push('/employer')
       }
     }
   }
@@ -78,13 +83,15 @@
 
         &:first-child {
           width: 50%;
+          cursor: pointer;
         }
       }
     }
 
     .totalRecord {
-      margin-top: 10px;
       font-size: 15px;
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
   }
 
